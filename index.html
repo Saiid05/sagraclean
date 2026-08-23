@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- SEO Básico: Esto es lo que lee Google para indexar tu web y mostrarla en los resultados -->
+        <meta name="description" content="SagraClean: Empresa de limpieza profesional especializada en la limpieza de oficinas pequeñas y medianas, mantenimiento de edificios, limpieza de garajes y servicios de limpieza industrial. ¡Pide tu presupuesto gratuito!">
+        <meta name="author" content="SagraClean">
+
+        <title>Limpiezas SagraClean | Empresa de Limpieza de oficinas pequeñas y medianas, Edificios y Garajes</title>
+
+        <!-- CSS FILES -->        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+        <link href="css/tooplate-clean-work.css" rel="stylesheet">
+        <link rel="icon" type="image/png" href="favicon.png">
+        <link rel="canonical" href="https://sagraclean.com/">
+
+        <!--
+            Datos estructurados Schema.org (LocalBusiness):
+            no se ve en pantalla, es información que lee Google para
+            mostrar la ficha del negocio (dirección, teléfono, horario)
+            directamente en los resultados de búsqueda.
+        -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "SagraClean",
+            "image": "https://sagraclean.com/images/male-wearing-apron-female-white-t-shirt-smiling-broadly-being-glad-clean.png",
+            "url": "https://sagraclean.com/",
+            "telephone": "+34611846918",
+            "email": "info@sagraclean.com",
+            "priceRange": "€€",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Toledo",
+                "addressRegion": "Castilla-La Mancha",
+                "addressCountry": "ES"
+            },
+            "areaServed": "La Sagra, Toledo",
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "17:00"
+            }
+        }
+        </script>
+
+        <!-- CSS solo para la sección de reseñas de Google (no está en el .css general
+             porque es un bloque añadido aparte, para no tocar el tema base) -->
+        <style>
+        /* ══════════════════════════════
+           SECCIÓN RESEÑAS GOOGLE
+        ══════════════════════════════ */
+        .google-reviews-section {
+            background: #fff;
+        }
+
+        /* Tarjeta puntuación izquierda */
+        .google-score-card {
+            background: #fff;
+            border: 1.5px solid #E8E8E6;
+            border-radius: 20px;
+            padding: 36px 28px;
+            box-shadow: 0 4px 32px rgba(0,0,0,.07);
+            display: inline-block;
+            width: 100%;
+        }
+        .google-logo-img {
+            height: 28px;
+            object-fit: contain;
+        }
+        .google-stars-big {
+            font-size: 28px;
+            color: #FBBC05;
+            letter-spacing: 3px;
+            margin-bottom: 4px;
+        }
+        .google-score-num {
+            font-size: 56px;
+            font-weight: 700;
+            color: #0A0A0A;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .google-score-label {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 24px;
+        }
+
+        /* Botón principal "Dejar reseña" */
+        .btn-google-review {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            color: #0A0A0A;
+            border: 1.5px solid #dadce0;
+            border-radius: 100px;
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: box-shadow .2s, border-color .2s;
+            width: 100%;
+        }
+        .btn-google-review:hover {
+            color: #0A0A0A;
+            box-shadow: 0 4px 16px rgba(0,0,0,.12);
+            border-color: #aaa;
+        }
+
+        /* Título con letras de colores Google */
+        .google-reviews-title { font-size: clamp(22px, 3vw, 32px); font-weight: 700; }
+        .g-blue  { color: #4285F4; }
+        .g-red   { color: #EA4335; }
+        .g-yellow{ color: #FBBC05; }
+        .g-blue2 { color: #4285F4; }
+        .g-green { color: #34A853; }
+        .g-red2  { color: #EA4335; }
+
+        /* Cards de reseña */
+        .g-review-card {
+            background: #fff;
+            border: 1.5px solid #E8E8E6;
+            border-radius: 16px;
+            padding: 20px;
+            height: 100%;
+            box-shadow: 0 2px 12px rgba(0,0,0,.05);
+            transition: transform .25s, box-shadow .25s;
+        }
+        .g-review-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(0,0,0,.10);
+        }
+        .g-review-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .g-avatar {
+            width: 38px; height: 38px;
+            border-radius: 50%;
+            background: #E8F0FE;
+            color: #1A6EFF;
+            font-weight: 700; font-size: 13px;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            border: 1.5px solid rgba(26,110,255,.2);
+        }
+        .g-stars { color: #FBBC05; font-size: 13px; letter-spacing: 1px; }
+        .g-badge { flex-shrink: 0; }
+        .g-review-text {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Tarjeta CTA (dejar reseña) */
+        .g-review-cta {
+            background: linear-gradient(135deg, #f8f9ff 0%, #EEF4FF 100%);
+            border: 1.5px dashed #1A6EFF;
+            text-align: center;
+            color: #0A0A0A;
+            cursor: pointer;
+            min-height: 160px;
+        }
+        .g-review-cta:hover {
+            background: linear-gradient(135deg, #EEF4FF 0%, #dde8ff 100%);
+            border-color: #0A50CC;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(26,110,255,.15);
+        }
+        .g-cta-icon {
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            background: #1A6EFF;
+            color: #fff;
+            font-size: 26px; font-weight: 300; line-height: 44px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .g-review-cta strong { font-size: 14px; color: #0A0A0A; }
+        .g-review-cta p { font-size: 13px; color: #666; }
+        .g-cta-link { font-size: 13px; font-weight: 700; color: #1A6EFF; }
+        </style>
+
+    </head>
+    
+    <body>
+
+        <!-- Nota: es HTML estático, sin plantillas ni includes. El header, el menú (nav)
+             y el footer están repetidos igual en cada página (about.html, services.html,
+             contact.html...). Si cambias algo aquí (teléfono, menú, redes...) hay que
+             replicarlo a mano en el resto de páginas. -->
+        <header class="site-header">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-lg-12 col-12 d-flex flex-wrap">
+                        <p class="d-flex me-4 mb-0">
+                            <i class="bi-house-fill me-2"></i>
+                            Limpiezas, Servicios y Mantenimiento.
+                        </p>
+
+                        <p class="d-flex d-lg-block d-md-block d-none me-4 mb-0">
+                            <i class="bi-clock-fill me-2"></i>
+                            <strong class="me-2">Horario de contacto de 8 a 17:00</strong>
+                        </p>
+
+                        <p class="site-header-icon-wrap text-white d-flex mb-0 ms-auto">
+                            <i class="site-header-icon bi-whatsapp me-2"></i>
+                            <!--  EL TELÉFONO AQUÍ -->
+                            <a href="tel:+34611846918" class="text-white">
+                                +34 611 84 69 18
+                            </a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <!-- Si tienes el logo listo en la carpeta images con el nombre logo.png, descomenta la línea de abajo borrando los caracteres <!-- y -->
+                    <!-- <img src="images/logo.png" class="logo img-fluid" alt="SagraClean Logo"> -->
+                    <img src="images/bubbles.png" class="logo img-fluid" alt="bubbles">
+                    <span class="ms-2">
+    <span style="color: #ff69b4;">S</span>agra<span style="color: #ff69b4;">C</span>lean
+</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Inicio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">Quiénes Somos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Servicios</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contacto</a>
+                        </li>
+
+                        <li class="nav-item ms-3">
+                            <a class="nav-link custom-btn custom-border-btn custom-btn-bg-white btn" href="contact.html">Pedir Presupuesto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+
+            <!-- SECCIÓN PORTADA (HERO) -->
+            <section class="hero-section hero-section-full-height d-flex justify-content-center align-items-center">
+                <div class="section-overlay"></div>
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-7 col-12 text-center mx-auto">
+                            <!-- SEO: El H1 es el título más importante para Google. Debe incluir lo que haces -->
+                            <!-- Cada <b> es una palabra que rota automáticamente (efecto animado
+                                 gestionado por js/animated-headline.js). Para añadir/quitar un
+                                 servicio del titular basta con añadir o borrar una línea <b>. -->
+                            <h1 class="cd-headline rotate-1 text-white mb-4 pb-2">
+                                <span>Especialistas en limpieza de</span>
+                                <span class="cd-words-wrapper">
+                                    <b class="is-visible">oficinas
+                                        pequeñas y medianas</b>
+                                    <b>Portales</b>
+                                    <b>Garajes</b>
+                                    <b>Apartamentos</b>
+                                </span>
+                            </h1>
+
+                            <a class="custom-btn btn button button--atlas smoothscroll me-3" href="#intro-section">
+                                <span>Saber Más</span>
+                                <div class="marquee" aria-hidden="true">
+                                    <div class="marquee__inner">
+                                        <span>Saber Más</span>
+                                        <span>Saber Más</span>
+                                        <span>Saber Más</span>
+                                        <span>Saber Más</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a class="custom-btn custom-border-btn custom-btn-bg-white btn button button--pan smoothscroll" href="#services-section">
+                                <span>Ver Servicios</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,224L40,229.3C80,235,160,245,240,250.7C320,256,400,256,480,240C560,224,640,192,720,176C800,160,880,160,960,138.7C1040,117,1120,75,1200,80C1280,85,1360,139,1400,165.3L1440,192L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+            </section>
+
+
+            <!-- SECCIÓN PRESENTACIÓN (INTRO) -->
+            <section class="intro-section" id="intro-section">
+                <div class="container">
+                    <div class="row justify-content-lg-center align-items-center">
+
+                        <div class="col-lg-6 col-12">
+                            <h2 class="mb-4">Tu Empresa de Limpieza de Confianza</h2>
+
+                            <p>En <strong>SagraClean</strong> nos encargamos de ofrecer soluciones integrales de higiene y mantenimiento a sus espacios. Utilizamos productos de alta calidad y técnicas para garantizar entornos impecables, saludables y productivos.</p>
+                            <p>Trabajamos para ofrecerte la máxima comodidad en tu negocio o comunidad. El servicio es atendido directamente por una profesional con años de experiencia, sin rotaciones constantes de personal.</p>
+                        </div>
+
+                        <div class="col-lg-6 col-12 custom-block-wrap">
+                            <img src="images/male-wearing-apron-female-white-t-shirt-smiling-broadly-being-glad-clean.png" class="img-fluid" alt="Personal de limpieza profesional">
+
+                            <div class="custom-block d-flex flex-column">
+                                <h6 class="text-white mb-3">¿Necesitas presupuesto? <br> Llámanos ahora:</h6>
+
+                                <p class="d-flex mb-0">
+                                    <i class="bi-telephone-fill custom-icon me-2"></i>
+                                    <!-- REMPLAZA EL TELÉFONO AQUÍ -->
+                                    <a href="tel:+34611846918">
+                                        +34 611 84 69 18
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- SECCIÓN NUESTROS SERVICIOS -->
+            <!-- Cada tarjeta de servicio lleva 2 imágenes superpuestas: la primera se ve
+                 siempre, la segunda (clase "services-image-hover") aparece al pasar el
+                 ratón por encima (efecto definido en tooplate-clean-work.css). -->
+            <section class="services-section section-padding section-bg" id="services-section">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-12">
+                            <h2 class="mb-4">Nuestros Servicios de Limpieza</h2>
+                        </div>
+
+                        <!-- SERVICIO 1: OFICINAS -->
+                        <div class="col-lg-6 col-12">
+                            <div class="services-thumb">
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-5 col-12">
+                                        <div class="services-image-wrap">
+                                            <a href="services-detail.html">
+                                                <img src="images/services/people-taking-care-office-cleaning.jpg" class="services-image img-fluid" alt="Limpieza de oficinas pequeñas y medianas" loading="lazy">
+                                                <img src="images/services/person-taking-care-office.jpg" class="services-image services-image-hover img-fluid" alt="Mantenimiento de oficinas pequeñas y medianas" loading="lazy">
+
+                                                <div class="services-icon-wrap">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <p class="text-white mb-0"><i class="bi-star-fill me-2"></i>Eficiente</p>
+                                                        <p class="text-white mb-0"><i class="bi-shield-check me-2"></i>Garantizado</p>
+                                                    </div>                                                    
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-7 col-md-7 col-12 d-flex align-items-center">
+                                        <div class="services-info mt-4 mt-lg-0 mt-md-0">
+                                            <h4 class="services-title mb-1 mb-lg-2">
+                                                <a class="services-title-link" href="services-detail.html">Limpieza de  pequeñas y medianas</a>
+                                            </h4>
+                                            <p>Mantén un entorno de trabajo limpio y productivo. Limpieza profunda de mobiliario, equipos informáticos, suelos y zonas comunes.</p>
+
+                                            <div class="d-flex flex-wrap align-items-center">
+                                                <a href="services-detail.html" class="custom-btn btn button button--atlas mt-2 ms-auto">
+                                                    <span>Más info</span>
+                                                    <div class="marquee" aria-hidden="true">
+                                                        <div class="marquee__inner">
+                                                            <span>Más info</span><span>Más info</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SERVICIO 2: EDIFICIOS -->
+                        <div class="col-lg-6 col-12">
+                            <div class="services-thumb">
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-5 col-12">
+                                        <div class="services-image-wrap">
+                                            <a href="services-detail.html">
+                                                <img src="images/services/young-smiling-woman-wearing-rubber-gloves-cleaning-stove.jpg" class="services-image img-fluid" alt="Limpieza de edificios" loading="lazy">
+                                                <img src="images/services/woman-holding-rag-detergent-cleaning-cooker.jpg" class="services-image services-image-hover img-fluid" alt="Mantenimiento de comunidades" loading="lazy">
+
+                                                <div class="services-icon-wrap">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <p class="text-white mb-0"><i class="bi-star-fill me-2"></i>Impecable</p>
+                                                        <p class="text-white mb-0"><i class="bi-shield-check me-2"></i>Comunidades</p>
+                                                    </div>                                                    
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-7 col-md-7 col-12 d-flex align-items-center">
+                                        <div class="services-info mt-4 mt-lg-0 mt-md-0">
+                                            <h4 class="services-title mb-1 mb-lg-2">
+                                                <a class="services-title-link" href="services-detail.html">Limpieza de Edificios y Portales</a>
+                                            </h4>
+                                            <p>Mantenimiento integral para comunidades de vecinos y bloques de pisos. Limpieza de portales, escaleras, cristales y ascensores.</p>
+
+                                            <div class="d-flex flex-wrap align-items-center">
+                                                <a href="services-detail.html" class="custom-btn btn button button--atlas mt-2 ms-auto">
+                                                    <span>Más info</span>
+                                                    <div class="marquee" aria-hidden="true">
+                                                        <div class="marquee__inner">
+                                                            <span>Más info</span><span>Más info</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SERVICIO 3: GARAJES -->
+                        <div class="col-lg-6 col-12">
+                            <div class="services-thumb mb-lg-0">
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-5 col-12">
+                                        <div class="services-image-wrap">
+                                            <a href="services-detail.html">
+                                                <img src="images/services/man-polishing-car-inside-car-service.jpg" class="services-image img-fluid" alt="Limpieza de garajes" loading="lazy">
+                                                <img src="images/services/man-polishing-car-inside.jpg" class="services-image services-image-hover img-fluid" alt="Mantenimiento de parkings" loading="lazy">
+
+                                                <div class="services-icon-wrap">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <p class="text-white mb-0"><i class="bi-star-fill me-2"></i>Especializado</p>
+                                                        <p class="text-white mb-0"><i class="bi-shield-check me-2"></i>Suelos</p>
+                                                    </div>                                                    
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-7 col-md-7 col-12 d-flex align-items-center">
+                                        <div class="services-info mt-4 mt-lg-0 mt-md-0">
+                                            <h4 class="services-title mb-1 mb-lg-2">
+                                                <a class="services-title-link" href="services-detail.html">Limpieza de Garajes</a>
+                                            </h4>
+                                            <p>Limpieza de garajes comunitarios pequeños y medianos, con alcance y medios definidos tras una visita previa. Mantenimiento y barrido, Eliminación de polvo y telarañas, Limpieza mecanizada.Tratamiento de manchas.
+                                            </p>
+
+                                            <div class="d-flex flex-wrap align-items-center">
+                                                <a href="services-detail.html" class="custom-btn btn button button--atlas mt-2 ms-auto">
+                                                    <span>Más info</span>
+                                                    <div class="marquee" aria-hidden="true">
+                                                        <div class="marquee__inner">
+                                                            <span>Más info</span><span>Más info</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SERVICIO 4: INDUSTRIAL APARTAMENTO TURISTICOS -->
+                        <div class="col-lg-6 col-12">
+                            <div class="services-thumb mb-lg-0">
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-5 col-12">
+                                        <div class="services-image-wrap">
+                                            <a href="services-detail.html">
+                                                <img src="images/services/professional-industrial-cleaner-protective-uniform-cleaning-floor-food-processing-plant.jpg" class="services-image img-fluid" alt="Limpieza industrial" loading="lazy">
+                                                <img src="images/services/close-up-mop-cleaning-industrial-plant-floor.jpg" class="services-image services-image-hover img-fluid" alt="Limpieza de naves e industrias" loading="lazy">
+
+                                                <div class="services-icon-wrap">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <p class="text-white mb-0"><i class="bi-star-fill me-2"></i>Presentación</p>
+                                                        <p class="text-white mb-0"><i class="bi-shield-check me-2"></i>Organización</p>
+                                                    </div>                                                    
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-7 col-md-7 col-12 d-flex align-items-center">
+                                        <div class="services-info mt-4 mt-lg-0 mt-md-0">
+                                            <h4 class="services-title mb-1 mb-lg-2">
+                                                <a class="services-title-link" href="services-detail.html">Apartamentos turisticos</a>
+                                            </h4>
+                                            <p>Hacemos que tu apartamento brille para garantiza tus proximas 5 estrellas. Saneamos, higienizamos y preparamos tu apartamento para una estancia 100% segura.</p>
+
+                                            <div class="d-flex flex-wrap align-items-center">
+                                                <a href="services-detail.html" class="custom-btn btn button button--atlas mt-2 ms-auto">
+                                                    <span>Más info</span>
+                                                    <div class="marquee" aria-hidden="true">
+                                                        <div class="marquee__inner">
+                                                            <span>Más info</span><span>Más info</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- ══════════════════════════════════════════
+                 SECCIÓN RESEÑAS GOOGLE
+                 Las reseñas de abajo están escritas a mano (no se traen en
+                 directo de Google, eso requeriría una API de pago). Si cambian
+                 las reseñas reales del negocio, hay que actualizar este texto
+                 manualmente. El botón "Dejar una reseña" sí es un enlace real
+                 a la ficha de Google Business del negocio.
+            ══════════════════════════════════════════ -->
+            <section class="google-reviews-section section-padding">
+                <div class="container">
+                    <div class="row align-items-center">
+
+                        <!-- COLUMNA IZQUIERDA: puntuación + botón -->
+                        <div class="col-lg-4 col-12 text-center mb-5 mb-lg-0">
+                            <div class="google-score-card">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                                     alt="Google" class="google-logo-img mb-3">
+                                <div class="google-stars-big">★★★★★</div>
+                                <div class="google-score-num">5.0</div>
+                                <p class="google-score-label">Puntuación en Google</p>
+                                <a href="https://g.page/r/CRi5DOd2m0qXECE/review"
+                                   target="_blank" rel="noopener"
+                                   class="btn-google-review">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48" style="margin-right:8px;vertical-align:middle;">
+                                        <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                                        <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                                        <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                                        <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                                        <path fill="none" d="M0 0h48v48H0z"/>
+                                    </svg>
+                                    Dejar una reseña en Google
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- COLUMNA DERECHA: reseñas reales de Google con mini-logo -->
+                        <div class="col-lg-8 col-12">
+                            <h2 class="google-reviews-title mb-4">Lo que dicen en <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue2">g</span><span class="g-green">l</span><span class="g-red2">e</span></h2>
+
+                            <div class="row g-3">
+
+                                <div class="col-lg-6 col-12">
+                                    <div class="g-review-card">
+                                        <div class="g-review-header">
+                                            <div class="g-avatar">MG</div>
+                                            <div>
+                                                <strong>María G.</strong>
+                                                <div class="g-stars">★★★★★</div>
+                                            </div>
+                                            <svg class="g-badge ms-auto" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                                        </div>
+                                        <p class="g-review-text">"Contratamos a SagraClean para el mantenimiento de un edificio y el resultado es impecable. El portal y las escaleras lucen como nunca."</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <div class="g-review-card">
+                                        <div class="g-review-header">
+                                            <div class="g-avatar">AM</div>
+                                            <div>
+                                                <strong>Alejandro M.</strong>
+                                                <div class="g-stars">★★★★★</div>
+                                            </div>
+                                            <svg class="g-badge ms-auto" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                                        </div>
+                                        <p class="g-review-text">"Excelente servicio. Son puntuales, profesionales y muy detallistas. Totalmente recomendados para cualquier empresa."</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <div class="g-review-card">
+                                        <div class="g-review-header">
+                                            <div class="g-avatar">CT</div>
+                                            <div>
+                                                <strong>Carlos T.</strong>
+                                                <div class="g-stars">★★★★★</div>
+                                            </div>
+                                            <svg class="g-badge ms-auto" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                                        </div>
+                                        <p class="g-review-text">"Limpieza industrial profunda en nuestro almacén. El cambio fue radical. Muy equipados y con gran conocimiento del sector."</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <!-- TARJETA CTA: dejar reseña -->
+                                    <a href="https://g.page/r/CRi5DOd2m0qXECE/review"
+                                       target="_blank" rel="noopener"
+                                       class="g-review-card g-review-cta text-decoration-none d-flex flex-column align-items-center justify-content-center">
+                                        <div class="g-cta-icon">+</div>
+                                        <strong>¿Has trabajado con nosotros?</strong>
+                                        <p class="mb-0 mt-1">Cuéntanos tu experiencia en Google</p>
+                                        <span class="g-cta-link mt-2">Escribir reseña →</span>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+
+        <!-- PIE DE PÁGINA (FOOTER) -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-12 d-flex align-items-center mb-4 pb-2">
+                        <div>
+                            <img src="images/bubbles.png" class="logo img-fluid" alt="">
+                        </div>
+
+                        <ul class="footer-menu d-flex flex-wrap ms-5">
+                            <li class="footer-menu-item"><a href="about.html" class="footer-menu-link">Quiénes Somos</a></li>
+                            <li class="footer-menu-item"><a href="services.html" class="footer-menu-link">Servicios</a></li>
+                            <li class="footer-menu-item"><a href="contact.html" class="footer-menu-link">Contacto</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-5 col-12 mb-4 mb-lg-0">
+                        <h5 class="site-footer-title mb-3">Nuestros Servicios</h5>
+
+                        <ul class="footer-menu">
+                            <li class="footer-menu-item"><a href="services.html" class="footer-menu-link"><i class="bi-chevron-double-right footer-menu-link-icon me-2"></i>Limpieza de Oficinas pequeñas y medianas</a></li>
+                            <li class="footer-menu-item"><a href="services.html" class="footer-menu-link"><i class="bi-chevron-double-right footer-menu-link-icon me-2"></i>Limpieza de Edificios</a></li>
+                            <li class="footer-menu-item"><a href="services.html" class="footer-menu-link"><i class="bi-chevron-double-right footer-menu-link-icon me-2"></i>Limpieza de Garajes</a></li>
+                            <li class="footer-menu-item"><a href="services.html" class="footer-menu-link"><i class="bi-chevron-double-right footer-menu-link-icon me-2"></i>Limpieza Industrial</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0 mb-md-0">
+                        <h5 class="site-footer-title mb-3">Contacto</h5>
+
+                        <p class="text-white d-flex mt-3 mb-2">
+                            <i class="bi-geo-alt-fill me-2"></i>
+                            Toledo, España
+                        </p>
+
+                        <p class="text-white d-flex mb-2">
+                            <i class="bi-telephone-fill me-2"></i>
+                            <a href="tel:+34611846918" class="site-footer-link">+34 611 84 69 18</a>
+                        </p>
+
+                        <p class="text-white d-flex">
+                            <i class="bi-envelope-fill me-2"></i>
+                            <a href="mailto:info@sagraclean.com" class="site-footer-link">info@sagraclean.com</a>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 mt-3 mt-lg-0 mt-md-0">
+                        <div class="featured-block">
+                            <h5 class="text-white mb-3">Horario de atención</h5>
+                            <strong class="d-block text-white mb-1">de 8 a 17:00</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="site-footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-12">
+                            <p class="copyright-text mb-0">Copyright © 2026 SagraClean.</p>
+                        </div>
+                        <div class="col-lg-6 col-12 text-end">
+                            <p class="copyright-text mb-0">// Diseñado por Saaiid05 y adaptado para SagraClean //</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.backstretch.min.js"></script>
+        <script src="js/counter.js"></script>
+        <script src="js/countdown.js"></script>
+        <script src="js/init.js"></script>
+        <script src="js/modernizr.js"></script>
+        <script src="js/animated-headline.js"></script>
+        <script src="js/custom.js"></script>
+
+    </body>
+</html>
